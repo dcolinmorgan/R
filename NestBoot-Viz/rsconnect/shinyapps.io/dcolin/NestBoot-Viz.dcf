@@ -1,0 +1,12 @@
+name: NestBoot-Viz
+title: NestBoot-Viz
+username:
+account: dcolin
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 430474
+bundleId: 1781562
+url: https://dcolin.shinyapps.io/NestBoot-Viz/
+when: 1545644860.96396
+asMultiple: FALSE
+asStatic: FALSE
