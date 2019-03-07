@@ -26,7 +26,7 @@ setwd("~/Dropbox/SciLifeLab/PROJECTS/nestBoot_MYC/Botlsco/signMYCBotlsco524-Feb-
 tlscoMYCsignlinkplotname<-rev(mixedsort(list.files(pattern = "*.dat"))) #TSV
 tlscoMYCsignlinkplotdata <- lapply(tlscoMYCsignlinkplotname, read.delim, header=TRUE,sep='\t',skip=1)
 tlscoMYCsignlinkcutdata <- lapply(tlscoMYCsignlinkplotname, read.delim, header=TRUE,sep='\t',skip=1003)
-file<-paste("~/Dropbox/SciLifeLab/git/R/GSnetApp/tlscoMYCsignlinkplotdata",Sys.Date(),".rdata",sep="")
+file<-paste("~/Dropbox/SciLifeLab/git/R/cancerGRN/tlscoMYCsignlinkplotdata",Sys.Date(),".rdata",sep="")
 save(tlscoMYCsignlinkplotdata,tlscoMYCsignlinkcutdata,tlscoMYCsignlinkplotname,file=file)
 # 
 # #LINK

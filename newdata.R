@@ -2,7 +2,7 @@ library(gtools)
 setwd("~/Dropbox/SciLifeLab/PROJECTS/nestBoot_MYC/Bolasso/signMYCBolasso524-Feb-2017/signed_cytoscape_net/")
 lassonameMYCsign<-rev(mixedsort(list.files(pattern = "*.tsv"))) #TSV
 lassodataMYCsign <- lapply(lassonameMYCsign, read.csv, header=FALSE,sep='\t') #TSV push edited cytoscape csv output
-file<-paste("~/Dropbox/SciLifeLab/git/R/GSnetApp/lassodataMYCsign",Sys.Date(),".rdata",sep="")
+file<-paste("~/Dropbox/SciLifeLab/git/R/cancerGRN/lassodataMYCsign",Sys.Date(),".rdata",sep="")
 save(lassodataMYCsign,lassonameMYCsign,file=file)
 
 setwd("~/Dropbox/SciLifeLab/PROJECTS/nestBoot_MYC/Bolsco/signMYCBolsco524-Feb-2017/signed_cytoscape_net/")
@@ -26,7 +26,7 @@ save(lscodataL978,lsconameL978,file=file)
 setwd("~/Dropbox/SciLifeLab/PROJECTS/nestBoot_MYC/Botlsco/signMYCBotlsco524-Feb-2017/signed_cytoscape_net/")
 tlsconameMYCsign<-rev(mixedsort(list.files(pattern = "*.tsv"))) #TSV
 tlscodataMYCsign <- lapply(tlsconameMYCsign, read.csv, header=FALSE,sep='\t') #TSV push edited cytoscape csv output
-file<-paste("~/Dropbox/SciLifeLab/git/R/GSnetApp/tlscodataMYCsign",Sys.Date(),".rdata",sep="")
+file<-paste("~/Dropbox/SciLifeLab/git/R/cancerGRN/tlscodataMYCsign",Sys.Date(),".rdata",sep="")
 save(tlscodataMYCsign,tlsconameMYCsign,file=file)
 
 # setwd("~/Dropbox/SciLifeLab/PROJECTS/B.subtilis/BSUBBolasso5_05-Sep-2017_FDR0.95/cytoscape_net/")

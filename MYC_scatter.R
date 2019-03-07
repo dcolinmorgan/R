@@ -49,7 +49,7 @@ e=ggplot() + #singles
   #geom_hline(yintercept = log10(9925.3),color="grey")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_point(data=data2,aes(x=factor(data2$no.links),y=(log10((data2$`SS WRSS(Yobs-Ypred) LOO`+data2$`SS WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 1, colour = "black", fill = "white", size = 1, stroke = 1)+
   # geom_point(data=data3,aes(x=factor(data3$no.links),y=(log10((data3$`SS WRSS(Yobs-Ypred) LOO`+data3$`SS WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 7, colour = "black", fill = "white", size = 1, stroke = 1)+
-  theme_classic()+ labs(y = "log WRSS", x = "Nr of inferred links",color = "method")+ ylim(2, 11)
+  theme_classic()+ labs(y = "log wRSS", x = "Nr of inferred links",color = "method")+ ylim(2, 11)
 
 
 f=ggplot() + #doubles
@@ -58,7 +58,7 @@ f=ggplot() + #doubles
   #geom_hline(yintercept = log10(3389),color="grey")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_point(data=data2,aes(x=factor(data2$no.links),y=(log10((data2$`WRSS(Yobs-Ypred) LOO`+data2$`WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 1, colour = "black", fill = "white", size = 1, stroke = 1)+
   # geom_point(data=data3,aes(x=factor(data3$no.links),y=(log10((data3$`WRSS(Yobs-Ypred) LOO`+data3$`WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 7, colour = "black", fill = "white", size = 1, stroke = 1)+
-  theme_classic()+ labs(y = "log WRSS", x = "Nr of inferred links",color = "method")+ ylim(2, 11)
+  theme_classic()+ labs(y = "log wRSS", x = "Nr of inferred links",color = "method")+ ylim(2, 11)
 
 
 
@@ -68,7 +68,7 @@ g=ggplot() + #singles
   #geom_hline(yintercept = log10(9925.3),color="grey")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_point(data=data2,aes(x=factor(data2$no.links),y=(log10((data2$`SS WRSS(Yobs-Ypred) LOO`+data2$`SS WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 4, colour = "black", fill = "white", size = 2, stroke = 1)+
   # geom_point(data=data3,aes(x=factor(data3$no.links),y=(log10((data3$`SS WRSS(Yobs-Ypred) LOO`+data3$`SS WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 7, colour = "black", fill = "white", size = 1, stroke = 1)+
-  theme_classic()+ labs(y = "log WRSS", x = "Nr of inferred links",fill = "method")+ ylim(2, 11)
+  theme_classic()+ labs(y = "log wRSS", x = "Nr of inferred links",fill = "method")+ ylim(2, 11)
 
 
 h=ggplot() + #doubles
@@ -77,7 +77,7 @@ h=ggplot() + #doubles
   #geom_hline(yintercept = log10(3389),color="grey")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_point(data=data2,aes(x=factor(data2$no.links),y=(log10((data2$`WRSS(Yobs-Ypred) LOO`+data2$`WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 4, colour = "black", fill = "white", size = 2, stroke = 1)+
   # geom_point(data=data3,aes(x=factor(data3$no.links),y=(log10((data3$`WRSS(Yobs-Ypred) LOO`+data3$`WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 7, colour = "black", fill = "white", size = 1, stroke = 1)+
-  theme_classic()+ labs(y = "log WRSS", x = "Nr of inferred links",fill = "method")+ ylim(2, 11)
+  theme_classic()+ labs(y = "log wRSS", x = "Nr of inferred links",fill = "method")+ ylim(2, 11)
 
 
 # 

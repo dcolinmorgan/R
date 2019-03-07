@@ -1,3 +1,5 @@
+
+
 ##improve file grep via github API https://developer.github.com/v3/repos/#list-all-topics-for-a-repository
 
 #### Load necessary packages and data ####
@@ -31,7 +33,8 @@ library(treeio)
 
 load("lassodataMYCsign2017-11-08.rdata")
 load("lscodataMYCsign2017-11-08.rdata")
-load("tlscodataMYCsign2018-12-21.rdata")
+# load("tlscodataMYCsign2018-12-21.rdata")
+load("tlscodataMYCsign2019-01-30.rdata")
 
 # ### LOAD PLOT DATA ###
 load("lassoMYCsignlinkplotdata2017-02-08.rdata")
@@ -125,14 +128,15 @@ server <- function(input, output) {
       # png(file,width=12,height=8)
       FORCE()%>%saveNetwork(file = filename)
       # dev.off()
-    # }) 
+      # }) 
     }
   )
   
   output$forcelasso <- renderForceNetwork({
-    networkD3::FORCE()
+    FORCE()
   })
-   FORCE<- function(){
+  
+  FORCE<- function(){
     # v <- reactiveValues(data = NULL)
     if(input$raw==FALSE){
       wee<-paste(input$data,"dataMYCsign",sep="")
@@ -183,7 +187,7 @@ server <- function(input, output) {
       '      d3.select(this).select("circle").transition()
     .duration(750)
     .attr("r", 30)'
-    D3_network_LM <- forceNetwork(Links = edgeList, # data frame that contains info about edges
+    D3_network_LM <- networkD3::forceNetwork(Links = edgeList, # data frame that contains info about edges
                                              Nodes = nodeList, # data frame that contains info about nodes
                                              Source = "SourceID", # ID of source node 
                                              Target = "TargetID", # ID of target node
@@ -288,13 +292,15 @@ server <- function(input, output) {
   output$CytoscapeJS <-renderRcytoscapejs({
     if(input$raw==FALSE){
       wee<-paste(input$data,"dataMYCsign",sep="")
-      datum<-ddd[[wee]]}else{
-        # }else if(input$demo4==TRUE){
-        inFile <- input$file1
-        if (is.null(inFile))
-          return(NULL)
-        datum <-lapply(rev(mixedsort(inFile$datapath)), read.csv, header=FALSE,sep = input$sep)
-      }
+      datum<-ddd[[wee]]
+      # datum<-lapply(datum, function(df){df[order(size(df,2)),]})
+    }else{
+      # }else if(input$demo4==TRUE){
+      inFile <- input$file1
+      if (is.null(inFile))
+        return(NULL)
+      datum <-lapply(rev(mixedsort(inFile$datapath)), read.csv, header=FALSE,sep = input$sep)
+    }
     
     edgeData<-datum[[input$sparsity]][1:6]
     colnames(edgeData) <- c("sourceName", "targetName","color","link2","link", "weight")
@@ -536,7 +542,7 @@ server <- function(input, output) {
     # c<-upgma(as.matrix(JAKS),method=input$uplay)}else{
     if (input$root==FALSE){jj<-'none'}else{jj<-FALSE}
     c<-upgma(as.matrix(1-JAKS),method=input$uplay)#}
-    ggtree(c,layout=input$dendlay,branch.length=jj)+ geom_tiplab(size=6, color="black")#+ geom_nodepoint(color="red", alpha=1/4, size=10)#+geom_text(aes(x=c,label=round(c$edge.length, digits=2)))#,frame="none", adj=c(.5, -.75)))
+    ggtree(c,layout=input$dendlay,branch.length=jj)+ geom_tiplab(size=12, color="black")#+ geom_nodepoint(color="red", alpha=1/4, size=10)#+geom_text(aes(x=c,label=round(c$edge.length, digits=2)))#,frame="none", adj=c(.5, -.75)))
     # plot(c)
     # edgelabels(round(c$edge.length, digits=2),frame="none", adj=c(.5, -.75))
     
@@ -683,7 +689,7 @@ ui <- shinyUI(fluidPage(#theme = shinytheme("united"),
       
       checkboxInput('self', 'Self-Loop', FALSE),
       # if(input$demo==TRUE){
-      sliderInput("sparsity", "Sparsity",1, min = 1,max=length(lassodataMYCsign), step = 1),#max = dim("contents")[[1]][1], 
+      sliderInput("sparsity", "Sparsity",1, min = 1,max=30, step = 1),#max = dim("contents")[[1]][1], 
       # }else if(input$demo2==TRUE){
       #   sliderInput("sparsity", "Sparsity",1, min = 1,max=length(lscodataMYCsign), step = 1),#max = dim("contents")[[1]][1], 
       # }else if(input$demo3==TRUE){
@@ -733,3 +739,4 @@ ui <- shinyUI(fluidPage(#theme = shinytheme("united"),
 
 #### Run ####
 shinyApp(ui = ui, server = server)
+
