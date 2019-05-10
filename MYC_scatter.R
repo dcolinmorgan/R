@@ -44,7 +44,7 @@ data3<-data[(data$type)=="Rand_Measured",]
 
 
 e=ggplot() + #singles
-  geom_boxplot(data=data1,aes(x=factor(data1$no.links),y=(log10((data1$`SS WRSS(Yobs-Ypred) LOO`+data1$`SS WRSS(Pobs-Ppred) LOO`)/(2*3))),color=factor(data1$Method)),scale="width",trim=TRUE,draw_quantiles = c(0.25, 0.5, 0.75))+
+  # geom_boxplot(data=data1,aes(x=factor(data1$no.links),y=(log10((data1$`SS WRSS(Yobs-Ypred) LOO`+data1$`SS WRSS(Pobs-Ppred) LOO`)/(2*3))),color=factor(data1$Method)),scale="width",trim=TRUE,draw_quantiles = c(0.25, 0.5, 0.75))+
   # geom_split_violin(data=data1,aes(x=factor(data1$no.links),y=(log10((data1$`SS WRSS(Yobs-Ypred) LOO`+data1$`SS WRSS(Pobs-Ppred) LOO`)/(2*3))),color=factor(data1$Method)),scale="width",trim=TRUE,draw_quantiles = c(0.25, 0.5, 0.75),fill=data$type)+
   #geom_hline(yintercept = log10(9925.3),color="grey")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_point(data=data2,aes(x=factor(data2$no.links),y=(log10((data2$`SS WRSS(Yobs-Ypred) LOO`+data2$`SS WRSS(Pobs-Ppred) LOO`)/(2*3)))),shape = 1, colour = "black", fill = "white", size = 1, stroke = 1)+

@@ -17,7 +17,7 @@ col_meta <- read.delim(col_meta_path, sep="\t", header=T, stringsAsFactors=F)
 exp_meta_path <- "GSE92742_Broad_LINCS_inst_info.txt"
 exp_meta <- read.delim(exp_meta_path, sep="\t", header=T, stringsAsFactors=F)
 
-##cell info
+##cell info"
 cell_meta_path <- "GSE92742_Broad_LINCS_cell_info.txt"
 cell_meta <- read.delim(cell_meta_path, sep="\t", header=T, stringsAsFactors=F)
 
@@ -27,6 +27,7 @@ gene_meta <- read.delim(gene_meta_path, sep="\t", header=T, stringsAsFactors=F)
 
 ##raw expression with initial test probes
 ds_path <- "GSE92742_Broad_LINCS_Level2_GEX_epsilon_n1269922x978.gctx"
+# ds_path <-"GSE92742_Broad_LINCS_Level3_INF_mlr12k_n1319138x12328.gctx"
 
 L978_meta_path <-"GSE92742_Broad_LINCS_gene_info.txt"
 L978_meta <- read.delim(L978_meta_path, sep="\t", row.names=1, stringsAsFactors=F)

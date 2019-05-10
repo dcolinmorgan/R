@@ -43,11 +43,11 @@ F<-merge(D,EE,by="GeneName",all=FALSE)
 # write.table(F,"~/Dropbox/SciLifeLab/git/R/proteinDB/L1000_drug.csv",na = "",sep = ",") #contains gene symbol, uniprotID,drugbankID, drug name
 
 n_occur <- data.frame(table(F$`DrugBank ID`))
-uniqueF<-F[F$`DrugBank ID` %in% n_occur$Var1[n_occur$Freq <=2],] #2703 all unique
+uniqueF<-F[F$`DrugBank ID` %in% n_occur$Var1[n_occur$Freq ==1],] #2703 all unique
 # write.table(uniqueF,"~/Dropbox/SciLifeLab/git/R/proteinDB/L1000_uniqueDrugP.csv",na = "",sep = ",")
 
 Pname<-(uniqueF$GeneName)
-# drug_HA1E_24_Y <- read.table(file="~/drug_HA1E_24_Y.csv",row.names=1,header=TRUE,sep=",")
+drug_HA1E_24_Y <- read.table(file="~/drug_HA1E_24_Y.csv",row.names=1,header=TRUE,sep=",")
 
 Z<-intersect(unique(Pname),rownames(drug_HA1E_24_Y)) #take only genes matching L1000 list #2700 drugs
 ZZ<-intersect(rownames(drug_HA1E_24_Y),unique(Pname)) #take only drugs with single gene target = 2700 drugs
