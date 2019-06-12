@@ -1,0 +1,14 @@
+{
+	"file": "https://raw.githubusercontent.com/dcolinmorgan/R/master/logL1000_consensus.tsv?token=AAKUZ3Y7LDOJ7LFSAQPH5VC5BIDMU",
+	"name": "L1000 inferred consensus GRN",
+	"header": 0,
+	"separator": "\t",
+	"skip": 0,
+	"meta": [
+		{ "type": "id", "index": 0, "name": "TF" },
+		{ "type": "integer", "index": 1, "name": "target" }
+	],
+	"sets": [
+		{ "format": "binary", "start": 3, "end": 12 }
+	]
+}
