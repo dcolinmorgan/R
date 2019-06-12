@@ -6,7 +6,7 @@
 	"skip": 0,
 	"meta": [
 		{ "type": "id", "index": 0, "name": "TF" },
-		{ "type": "integer", "index": 1, "name": "target" }
+		{ "type": "id", "index": 1, "name": "target" }
 	],
 	"sets": [
 		{ "format": "binary", "start": 3, "end": 12 }
