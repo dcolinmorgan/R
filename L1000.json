@@ -1,14 +1,13 @@
 {
-	"file": "https://raw.githubusercontent.com/dcolinmorgan/R/master/logL1000_consensus.tsv?token=AAKUZ3Y7LDOJ7LFSAQPH5VC5BIDMU",
+	"file": "https://raw.githubusercontent.com/dcolinmorgan/R/master/logicalL1000_consensus.tsv",
 	"name": "L1000 inferred consensus GRN",
 	"header": 0,
 	"separator": "\t",
 	"skip": 0,
 	"meta": [
-		{ "type": "id", "index": 0, "name": "TF" },
-		{ "type": "id", "index": 1, "name": "target" }
+		{ "type": "id", "index": 0, "name": "LINK" },
 	],
 	"sets": [
-		{ "format": "binary", "start": 3, "end": 12 }
+		{ "format": "binary", "start": 1, "end": 10 }
 	]
 }
